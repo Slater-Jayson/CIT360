@@ -14,19 +14,19 @@ import com.google.gson.JsonParser;
 public class GetGson {
 	
 	public void getGson() throws IOException {
-	String zip;
-	String sURL = "http://freegeoip.net/json/"; //just a string
+	String ip;
+	String sURL = "http://jsonip.com"; //a string that has the url with the free API
 
-    // Connect to the URL using java's native library
+    // connect to URL using java
     URL url = new URL(sURL);
     HttpURLConnection request = (HttpURLConnection) url.openConnection();
     request.connect();
 
-    // Convert to a JSON object to print data
-    JsonParser jp = new JsonParser(); //from gson
-    JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent())); //Convert the input stream to a json element
-    JsonObject rootobj = root.getAsJsonObject(); //May be an array, may be an object. 
-    zip = rootobj.get("zip_code").getAsString(); //just grab the zipcode
-	System.out.println(zip);
+    // converting to json object
+    JsonParser jp = new JsonParser(); //gson
+    JsonElement root = jp.parse(new InputStreamReader((InputStream) request.getContent())); //Convert input to json
+    JsonObject rootobj = root.getAsJsonObject(); //root or object. 
+    ip = rootobj.get("ip").getAsString(); //grab ip
+	System.out.println(ip);
 }
 }
