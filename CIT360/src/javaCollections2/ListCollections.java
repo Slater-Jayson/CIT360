@@ -14,6 +14,7 @@ public class ListCollections {
 		ray.add("Egyptian");
 		ray.add("Norse");
 		return ray;
+		
 	}
 	
 	
@@ -27,7 +28,7 @@ public class ListCollections {
 		System.out.print("\t" + myarray);
 		System.out.println();
 		System.out.println("Second element : "+  myarray.get(1));
-		System.out.println("Removing second..");
+		System.out.println("Remove second..");
 		myarray.remove(1);
 		System.out.println("Second element now: "+  myarray.get(1));
 		List myLinkedList = new LinkedList();
